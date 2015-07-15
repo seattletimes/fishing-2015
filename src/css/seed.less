@@ -69,30 +69,36 @@ section {
   clear: both;
   font-size: 16px;
 
+  &.primary {
+    padding-top: 40px;
+  }
+
   h2 {
     margin: 10px 0 0;
     font-family: @postcard;
     text-shadow: 6px 6px 12px rgba(0, 0, 0, .2);
-    .transform(rotate(-2deg) skew(-20deg));
-    -webkit-transform-origin: bottom left;
-    transform-origin: bottom left;
-
-    &::before {
-      display: block;
-      font-family: @cursive;
-      font-size: 19px;
-      line-height: 1;
-      position: relative;
-      left: 20px;
-    }
+    line-height: 1;
+    // .transform(rotate(-2deg) skew(-20deg));
+    // -webkit-transform-origin: bottom left;
+    // transform-origin: bottom left;
   }
 
   &.primary h2 {
-    color: @df-orange;
-    font-size: 32px;
+    color: @df-goldenrod;
+    font-size: 40px;
+    text-shadow: 3px 3px 0 #C33;
 
     &::before {
-      content: "Fishing spot";
+      content: "Fishing spot:";
+      display: block;
+      font-family: @cursive;
+      font-size: 19px;
+      line-height: 10px;
+      margin-bottom: 0;
+      position: relative;
+      left: 10px;
+      text-shadow: none;
+      color: black;
     }
   }
 
@@ -101,14 +107,15 @@ section {
     margin: 0;
 
     &::before {
-      content: "Bonus fishing"
+      content: "Bonus: "
     }
 
   }
 
   &.sightseeing h2 {
     font-family: @cursive;
-    color: @st-dark-purple;
+    color: @df-blue;
+    font-size: 32px;
   }
 }
 
