@@ -1,0 +1,162 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import "seattletimes";
+
+@postcard: Sigmar One;
+@cursive: Lobster Two;
+
+.transform(...) {
+  -webkit-transform: @arguments;
+  transform: @arguments;
+}
+
+@keyframes wobble {
+  from {
+    .transform(rotate(5deg));
+  }
+
+  to {
+    .transform(rotate(-5deg));
+  }
+}
+
+header.sticky-map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  .car {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 40px;
+    transition: all 2s ease-in-out;
+  }
+}
+
+body {
+  transition: background-color 3s linear;
+  font-family: @df-sans;
+
+  &[data-section="start"] {
+    background: @st-light-blue;
+    .car { left: 10%; top: 30%; }
+  }
+
+  &[data-section="lake-washington"] {
+    background: @st-light-green;
+    .car { left: 11%; top: 20%; }
+  }
+
+  &[data-section="lake-sammamish"] {
+    background: @st-light-purple;
+    .car { left: 15%; top: 22%; }
+  }
+}
+
+section {
+  width: 800px;
+  max-width: 100%;
+  margin: auto;
+  clear: both;
+  font-size: 16px;
+
+  h2 {
+    margin: 10px 0 0;
+    font-family: @postcard;
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, .2);
+    .transform(rotate(-2deg) skew(-20deg));
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+
+    &::before {
+      display: block;
+      font-family: @cursive;
+      font-size: 19px;
+      line-height: 1;
+      position: relative;
+      left: 20px;
+    }
+  }
+
+  &.primary h2 {
+    color: @df-orange;
+    font-size: 32px;
+
+    &::before {
+      content: "Fishing spot";
+    }
+  }
+
+  &.side-trip h2 {
+    font-family: @postcard;
+    margin: 0;
+
+    &::before {
+      content: "Bonus fishing"
+    }
+
+  }
+
+  &.sightseeing h2 {
+    font-family: @cursive;
+    color: @st-dark-purple;
+  }
+}
+
+@sidebar-width: 300px;
+
+aside.sidebar {
+  width: 300px;
+  max-width: 100%;
+  float: right;
+  clear: right;
+  margin-left: 12px;
+}
+
+figure.fish {
+  display: block;
+  margin: auto;
+
+  &:nth-child(2n - 1) img {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+
+    animation-name: wobble;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+
+  figcaption {
+    display: block;
+    margin: auto;
+    font-style: italic;
+    font-size: 13px;
+  }
+}
+
+.fact-box {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 8px;
+  }
+}
