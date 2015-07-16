@@ -1,0 +1,39 @@
+body {
+  transition: background-color 3s linear;
+
+  .sticky-map {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transition: -webkit-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+    .transform(translateX(-50%) translateY(-100%));
+    z-index: 999;
+    background: white;
+    background-image: linear-gradient(to bottom, white, #EEE);
+    height: 30px;
+    width: 100%;
+
+    .route {
+      width: 960px;
+      max-width: 100%;
+      margin: auto;
+      height: 100px;
+      display: none;
+    }
+
+    .car {
+      width: 50px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 999;
+    }
+  }
+
+  &:not([data-section="intro"]) {
+    .sticky-map {
+      .transform(translateX(-50%) translateY(0));
+    }
+  }
+}

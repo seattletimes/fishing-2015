@@ -10,6 +10,14 @@
 @postcard: Sigmar One;
 @cursive: Lobster Two;
 
+@fish-cyan: rgb(6, 187, 189);
+@fish-orange: rgb(251, 164, 0);
+@fish-red: rgb(255, 0, 0);
+@fish-blue: rgb(205, 232, 208);
+
+@import "sections";
+@import "scrolling";
+
 .transform(...) {
   -webkit-transform: @arguments;
   transform: @arguments;
@@ -25,105 +33,27 @@
   }
 }
 
-header.sticky-map {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
+header.large-map {
+  background: @fish-blue;
+  background-image: linear-gradient(to bottom, @fish-blue, lighten(@fish-blue, 20%));
 
-  .car {
-    position: absolute;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    width: 40px;
-    transition: all 2s ease-in-out;
-  }
-}
-
-body {
-  transition: background-color 3s linear;
-  font-family: @df-sans;
-
-  &[data-section="start"] {
-    background: @st-light-blue;
-    .car { left: 10%; top: 30%; }
-  }
-
-  &[data-section="lake-washington"] {
-    background: @st-light-green;
-    .car { left: 11%; top: 20%; }
-  }
-
-  &[data-section="lake-sammamish"] {
-    background: @st-light-purple;
-    .car { left: 15%; top: 22%; }
-  }
-}
-
-section {
-  width: 800px;
-  max-width: 100%;
-  margin: auto;
-  clear: both;
-  font-size: 16px;
-
-  &.primary {
-    padding-top: 40px;
-  }
-
-  h2 {
-    margin: 10px 0 0;
+  .byline {
     font-family: @postcard;
-    text-shadow: 6px 6px 12px rgba(0, 0, 0, .2);
-    line-height: 1;
-    // .transform(rotate(-2deg) skew(-20deg));
-    // -webkit-transform-origin: bottom left;
-    // transform-origin: bottom left;
+    display: block;
+    // font-style: normal;
   }
 
-  &.primary h2 {
-    color: @df-goldenrod;
-    font-size: 40px;
-    text-shadow: 3px 3px 0 #C33;
-
-    &::before {
-      content: "Fishing spot:";
-      display: block;
-      font-family: @cursive;
-      font-size: 19px;
-      line-height: 10px;
-      margin-bottom: 0;
-      position: relative;
-      left: 10px;
-      text-shadow: none;
-      color: black;
-    }
-  }
-
-  &.side-trip h2 {
-    font-family: @postcard;
-    margin: 0;
-
-    &::before {
-      content: "Bonus: "
-    }
-
-  }
-
-  &.sightseeing h2 {
-    font-family: @cursive;
-    color: @df-blue;
-    font-size: 32px;
+  .content {
+    width: 600px;
+    margin: auto;
+    max-width: 100%;
+    padding: 20px 0;
   }
 }
-
-@sidebar-width: 300px;
 
 aside.sidebar {
-  width: 300px;
-  max-width: 100%;
+  width: 400px;
+  max-width: 50%;
   float: right;
   clear: right;
   margin-left: 12px;
@@ -132,6 +62,7 @@ aside.sidebar {
 figure.fish {
   display: block;
   margin: auto;
+  text-align: center;
 
   &:nth-child(2n - 1) img {
     animation-direction: alternate-reverse;
@@ -158,6 +89,19 @@ figure.fish {
   }
 }
 
+.icon {
+  float: right;
+  max-width: 150px;
+  max-height: 150px;
+  margin-left: 10px;
+
+  &.left {
+    float: left;
+    margin-right: 10px;
+    margin-left: 0;
+  }
+}
+
 .fact-box {
   padding: 0;
   margin: 0;
@@ -165,5 +109,35 @@ figure.fish {
 
   li {
     margin-bottom: 8px;
+  }
+
+  b {
+    font-family: @postcard;
+    font-weight: normal;
+  }
+}
+
+leaflet-map.embedded {
+  margin: 20px 0;
+  height: 200px;
+  width: 100%;
+  background: white;
+
+  .you-are-here {
+    text-align: center;
+    font-size: 20px;
+    color: @fish-red;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -6px;
+    border-radius: 100%;
+    &::before {
+      content: "🌟";
+    }
+  }
+
+  .leaflet-control-attribution {
+    display: none !important;
   }
 }

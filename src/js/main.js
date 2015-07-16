@@ -2,14 +2,21 @@ require("./lib/social");
 require("./lib/ads");
 var track = require("./lib/tracking");
 
+require("component-leaflet-map");
+
 var sections = document.querySelectorAll("section.primary[id]");
 
-window.addEventListener("scroll", function() {
-  for (var i = 0; i < sections.length; i++) {
+var onScroll = function() {
+  for (var i = sections.length - 1; i >= 0; i--) {
     var bounds = sections[i].getBoundingClientRect();
-    if (bounds.top < 100 && bounds.bottom > 0) {
+    if (bounds.top < 200) {
       document.body.setAttribute("data-section", sections[i].id);
       return;
     }
   }
-});
+  document.body.setAttribute("data-section", "intro");
+};
+
+onScroll();
+
+window.addEventListener("scroll", onScroll);

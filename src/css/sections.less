@@ -1,0 +1,107 @@
+@import "flexbox";
+
+main.road-trip {
+  width: 960px;
+  max-width: 100%;
+  margin: auto;
+  .display-flex;
+  .flex-wrap(wrap);
+}
+
+section {
+  width: 800px;
+  max-width: 100%;
+  font-size: 16px;
+  padding: 16px;
+
+  h2 {
+    color: @fish-orange;
+    font-size: 100px;
+    text-shadow: 3px 3px 0 #C33;
+    margin: 20px 0;
+    line-height: .8;
+    font-family: @postcard;
+    text-shadow: 3px 6px 0 @fish-red;
+    font-weight: normal;
+    padding: 0 8px;
+    .transform(rotate(-4deg));
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+  }
+
+  &#columbia-river h2 {
+    font-size: 80px;
+  }
+
+  &.primary {
+    .flex(0 0 100%);
+    background: rgb(6, 187, 189);
+    color: white;
+
+    h2::before {
+      content: "Fishing spot";
+      display: block;
+      font-family: @cursive;
+      font-size: 40px;
+      line-height: 10px;
+      margin-bottom: 30px;
+      position: relative;
+      left: 10px;
+      text-shadow: none;
+      color: black;
+      .transform(rotate(4deg));
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+    }
+
+    .tips, .fact-box {
+      text-shadow: 0 0 4px rgba(0, 0, 0, .4);
+    }
+  }
+
+  &.side-trip {
+    background: @fish-orange;
+    .flex(1 0 50%);
+
+    h3 {
+      font-family: @df-serif;
+      color: black;
+      margin: 0;
+
+      &::before {
+        content: "Bonus!";
+        display: block;
+        color: @fish-red;
+        font-family: @postcard;
+        font-size: 48px;
+        font-weight: normal;
+      }
+
+    }
+  }
+
+  &.sightseeing {
+    .flex(1 0 50%);
+    background: @fish-blue;
+
+    h3 {
+      font-family: @df-serif;
+      color: black;
+      margin: 0;
+      font-weight: normal;
+
+      &::before {
+        font-size: 48px;
+        content: "Sidetrip";
+        font-family: @cursive;
+        color: @fish-cyan;
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  p, ul {
+    max-width: 50%;
+  }
+}
