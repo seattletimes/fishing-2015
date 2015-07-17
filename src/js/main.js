@@ -1,8 +1,8 @@
-// require("./lib/social");
-// require("./lib/ads");
-// var track = require("./lib/tracking");
+require("./lib/social");
+require("./lib/ads");
+var track = require("./lib/tracking");
 
-// require("component-leaflet-map");
+require("component-leaflet-map");
 
 var sections = document.querySelectorAll("section[id]");
 
@@ -20,3 +20,11 @@ var onScroll = function() {
 onScroll();
 
 window.addEventListener("scroll", onScroll);
+
+document.body.addEventListener("click", function(e) {
+  if (e.target.classList.contains("show-map")) {
+    var element = e.target.parentElement.querySelector("leaflet-map");
+    element.classList.toggle("show");
+    element.map.invalidateSize();
+  }
+});

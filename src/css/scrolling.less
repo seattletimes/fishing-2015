@@ -9,11 +9,10 @@ body {
     transition: transform .5s ease-in-out;
     .transform(translateX(-50%) translateY(-100%));
     z-index: 999;
-    background: #EEE;
-    background-image: linear-gradient(to bottom, #F8F8F8, #EEE);
     box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
-    height: 50px;
+    height: 44px;
     width: 100%;
+    padding: 0;
     .display-flex;
     
     .logo {
@@ -24,14 +23,19 @@ body {
     .route {
       .flex(1);
       position: relative;
+      background: #EEE;
+      background-image: linear-gradient(to bottom, #F8F8F8, #EEE);
+      overflow: hidden;
     }
 
     .car {
       width: 50px;
       position: absolute;
-      left: 0;
+      left: -100px;
       bottom: 0;
       z-index: 999;
+      transition: left .4s ease-in-out;
+      .transform(translateX(-50%));
     }
   }
 
@@ -40,12 +44,36 @@ body {
       .transform(translateX(-50%) translateY(0));
     }
   }
+  
+  .make-position(@id, @left) { 
+    &[data-section="@{id}"] {
+      .car { left: @left }
+    }
+  }
+  
+  .make-position("lake-washington", 0%);
+  .make-position("lake-sammamish", 5%);
+  .make-position("rattlesnake-lake", 5%);
+  .make-position("twedes-cafe", 10%);
+  .make-position("lake-keechelus", 15%);
+  .make-position("yakima-river", 25%);
+  .make-position("thorp-fruit", 36%);
+  .make-position("campus-burgers", 38%);
+  .make-position("columbia-river", 50%);
+  .make-position("gingko-forest", 52%);
+  .make-position("moses-lake", 65%);
+  .make-position("sprague-lake", 78%);
+  .make-position("fishtrap-lake", 85%);
+  .make-position("john-wayne-trail", 88%);
+  .make-position("spokane-river-trail", 97%);
+  .make-position("spokane-river", 98%);
+  .make-position("liberty-lake", 99%);
 }
 
 .sticky-map .dot {
   border-radius: 100%;
   position: absolute;
-  top: 25%;
+  top: 20px;
   .transform(translateY(-50%));
   
   &.primary {
@@ -58,9 +86,31 @@ body {
     background: @fish-orange;
     height: 10px;
     width: 10px;
+    z-index: 99;
   }
   
-  &.lake-washington { left: 5% }
+  &.sightseeing {
+    background: @fish-blue;
+    height: 8px;
+    width: 8px;
+    z-index: 99;
+  }
+  
+  &.lake-washington { left: 0% }
   &.lake-sammamish { left: 6% }
+  &.twedes { left: 9% }
   &.rattlesnake-lake { left: 10% }
+  &.lake-keechelus { left: 15% }
+  &.yakima-river { left: 25% }
+  &.thorp-fruit { left: 35% }
+  &.campus-burgers { left: 40% }
+  &.columbia-river { left: 50% }
+  &.gingko-forest { left: 52% }
+  &.moses-lake { left: 65% }
+  &.sprague-lake { left: 78% }
+  &.fishtrap-lake { left: 85% }
+  &.john-wayne-trail { left: 90% }
+  &.spokane-river-trail { left: 95% }
+  &.spokane-river { left: 97% }
+  &.liberty-lake {right: 0% }
 }

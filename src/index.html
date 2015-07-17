@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href='http://fonts.googleapis.com/css?family=Sigmar+One|Lobster+Two:700italic' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Sigmar+One|Lobster+Two:700:700italic' rel='stylesheet'>
     <%= t.include("partials/_adHead.html") %>
   </head>
   <body data-section="intro">
@@ -28,11 +28,29 @@
     </header>
 
     <header class="sticky-map">
-      <div class="logo"></div>
+      <div class="logo">
+        <a href="http://seattletimes.com">
+          <img src="./assets/st_logo50.png">
+        </a>
+      </div>
       <div class="route">
         <div class="primary dot lake-washington"></div>
         <div class="side-trip dot lake-sammamish"></div>
         <div class="side-trip dot rattlesnake-lake"></div>
+        <div class="sightseeing dot twedes"></div>
+        <div class="primary dot lake-keechelus"></div>
+        <div class="primary dot yakima-river"></div>
+        <div class="sightseeing dot thorp-fruit"></div>
+        <div class="sightseeing dot campus-burgers"></div>
+        <div class="primary dot columbia-river"></div>
+        <div class="sightseeing dot gingko-forest"></div>
+        <div class="primary dot moses-lake"></div>
+        <div class="primary dot sprague-lake"></div>
+        <div class="side-trip dot fishtrap-lake"></div>
+        <div class="sightseeing dot john-wayne-trail"></div>
+        <div class="primary dot liberty-lake"></div>
+        <div class="side-trip dot spokane-river"></div>
+        <div class="sightseeing dot spokane-river-trail"></div>
         <img src="./assets/car.png" class="car">
       </div>
     </header>
@@ -42,30 +60,33 @@
       <section class="primary" id="lake-washington">
         
         <h2>LAKE WASHINGTON</h2>
+        
+        <div class="content">
 
-        <aside class="sidebar">
-          <figure class="fish">
-            <img src="./assets/fish/cutthroat.png">
-            <figcaption>Cutthroat trout</figcaption>
-          </figure>
-          <figure class="fish">
-            <img src="./assets/fish/yellow-perch.png">
-            <figcaption>Yellow perch</figcaption>
-          </figure>
-        </aside>
+          <aside class="sidebar">
+            <figure class="fish">
+              <img src="./assets/fish/cutthroat.png">
+              <figcaption>Cutthroat trout</figcaption>
+            </figure>
+            <figure class="fish">
+              <img src="./assets/fish/yellow-perch.png">
+              <figcaption>Yellow perch</figcaption>
+            </figure>
+          </aside>
+          
+          <div class="column">
 
-        <p class="tips">
-          Nestled between Seattle and Bellevue, the lake offers plenty of fish to catch with ample public shoreline access. Great piers can be found at Seward Park, Gene Coulon Park in Renton, Luther Burbank Park on Mercer Island, Waverly Park, Marina Park and Old Ship Museum Park in Kirkland, Mount Baker, Madison Park, and Leschi. Fishing is best for cutthroat from April to October; bass from May to September; and yellow perch from April to October.
-
-        <!-- <aside class="sidebar"> -->
-          <%= t.include("_leaflet.html", { lat: 47.6215474, lng: -122.25575600000002 }) %>
-        <!-- </aside> -->
-
-        <ul class="fact-box">
-          <li> <b>Species:</b> Cutthroat trout, smallmouth bass and yellow perch
-          <li> <b>Dates:</b> Year-round
-          <li> <b>Where:</b> Trolling near the I-90 and 520 bridges are best for cutthroat. The shoreline on the east side of Mercer Island south to Renton is a bass haven. The banks from Seward Park north to Mount Baker and Madison Park areas are perch hot spots.
-        </ul>
+            <ul class="fact-box">
+              <li> <b>Species:</b> Cutthroat trout, smallmouth bass and yellow perch
+              <li> <b>Dates:</b> Year-round
+              <li> <b>Where:</b> Trolling near the I-90 and 520 bridges are best for cutthroat. The shoreline on the east side of Mercer Island south to Renton is a bass haven. The banks from Seward Park north to Mount Baker and Madison Park areas are perch hot spots.
+                <%= t.include("_leaflet.html", { lat: 47.6215474, lng: -122.25575600000002 }) %>
+            </ul>
+    
+            <p class="tips">
+              Nestled between Seattle and Bellevue, the lake offers plenty of fish to catch with ample public shoreline access. Great piers can be found at Seward Park, Gene Coulon Park in Renton, Luther Burbank Park on Mercer Island, Waverly Park, Marina Park and Old Ship Museum Park in Kirkland, Mount Baker, Madison Park, and Leschi. Fishing is best for cutthroat from April to October; bass from May to September; and yellow perch from April to October.
+          </div>
+        </div>
 
       </section>
 
@@ -76,7 +97,7 @@
         <p class="description">
           Lake Sammamish is located on the north side of I-90 in Issaquah and offers virtually the same kind of species to catch as Lake Washington. Hatchery kings and coho can also be had in late summer.
 
-        <!-- <%= t.include("_leaflet.html", { lat: 47.6084598, lng: -122.0878197 }) %> -->
+        <%= t.include("_leaflet.html", { lat: 47.6084598, lng: -122.0878197 }) %>
 
       </section>
       
@@ -87,22 +108,32 @@
         <p class="description">
           Rattlesnake Lake is a good trout fishery with an increased daily catch limit of five trout with no size restriction through Sept. 30. It has selective gear rules and will switch to catch-and-release beginning Oct. 1. Take Exit 32 off I-90 on Cedar Falls Road SE.
 
-        <!-- <%= t.include("_leaflet.html", { lat: 47.430526, lng: -121.774424 }) %> -->
+        <%= t.include("_leaflet.html", { lat: 47.430526, lng: -121.774424 }) %>
 
       </section>
       
       <section class="sightseeing" id="twedes-cafe">
 
-        <aside class="sidebar ad">
-          <%= t.include("partials/_ad.html", {type: "square"}) %>
-        </aside>
+        <div class="content">
+        
+          <div class="column">
+          
+            <h3>Twede's Café in North Bend</h3>
 
-        <h3>Twede's Café in North Bend</h3>
-
-        <img class="icon left" src="./assets/icons/twedes.png">
-
-        <p class="description">
-          Twede’s Café in North Bend was built in 1941 and made famous by the TV show "Twin Peaks," which immortalized the cafe’s cherry pie and "Damn fine cup o' coffee!" Take Exit 37 off I-90 and head north of SE North Bend Way to the café on right hand side of road.
+            <img class="icon left" src="./assets/icons/twedes.png">
+    
+            <p class="description">
+              Twede’s Café in North Bend was built in 1941 and made famous by the TV show "Twin Peaks," which immortalized the cafe’s cherry pie and "Damn fine cup o' coffee!" Take Exit 37 off I-90 and head north of SE North Bend Way to the café on right hand side of road.
+            
+            <%= t.include("_leaflet.html", { lat: 47.495205, lng: -121.786789 }) %>
+              
+          </div>
+          
+          <aside class="sidebar ad">
+            <%= t.include("partials/_ad.html", {type: "square"}) %>
+          </aside>
+          
+        </div>
 
       </section>
 
@@ -110,51 +141,61 @@
 
         <h2>LAKE KEECHELUS</h2>
 
-        <aside class="sidebar">
-          <figure class="fish">
-            <img src="./assets/fish/burbot.png">
-            <figcaption>Burbot</figcaption>
-          </figure>
-        </aside>
-
-        <p class="tips">
-          Kokanee measure 8 to 12 inches with a 10 kokanee daily limit, plus a two-fish 12-inch minimum size trout daily limit. If kokanee fishing is slow, try jigging for burbot (freshwater cod). Note: Launching a boat is poor in late summer.
-
-        <aside class="sidebar">
-          <%= t.include("_leaflet.html", { lat: 47.3525597, lng: -121.3734193 }) %>
-        </aside>
-
-        <ul class="fact-box">
-          <li> <b>Species:</b> Kokanee and burbot
-          <li> <b>Dates:</b> Year-round
-          <li> <b>Where:</b> Better known as “Stump Lake,” this giant natural lake covers more than 2,408 acres, and is three miles southeast of Snoqualmie Pass off I-90. Take the Hyak Exit to the boat launch and parking area.
-        </ul>
+        <div class="content">
+          
+          <aside class="sidebar">
+            <figure class="fish">
+              <img src="./assets/fish/burbot.png">
+              <figcaption>Burbot</figcaption>
+            </figure>
+          </aside>
+        
+          <div class="column">
+    
+            <ul class="fact-box">
+              <li> <b>Species:</b> Kokanee and burbot
+              <li> <b>Dates:</b> Year-round
+              <li> <b>Where:</b> Better known as “Stump Lake,” this giant natural lake covers more than 2,408 acres, and is three miles southeast of Snoqualmie Pass off I-90. Take the Hyak Exit to the boat launch and parking area. 
+                <%= t.include("_leaflet.html", { lat: 47.3525597, lng: -121.3734193 }) %>
+            </ul>
+            
+            <p class="tips">
+              Kokanee measure 8 to 12 inches with a 10 kokanee daily limit, plus a two-fish 12-inch minimum size trout daily limit. If kokanee fishing is slow, try jigging for burbot (freshwater cod). Note: Launching a boat is poor in late summer.
+              
+          </div>
+        
+        </div>
 
       </section>
 
       <section class="primary" id="yakima-river">
 
         <h2>YAKIMA RIVER</h2>
+        
+        <div class="content">
+          
+          <div class="column">         
+              
+            <ul class="fact-box">
+              <li> <b>Species:</b> Rainbow trout
+              <li> <b>Dates:</b> Year-round
+              <li> <b>Where:</b> The famed ripples of this blue-ribbon trout fly-fishery are within sight of drivers zipping up and down I-90. Locals refer to this section as the “Farmland Stretch” as it twists and turns from Thorp downstream to the Yakima River Canyon south of Ellensburg.
+                <%= t.include("_leaflet.html", { lat: 47.1890125, lng: -120.9574127 }) %>
+            </ul>
 
-        <aside class="sidebar">
-          <figure class="fish">
-            <img src="./assets/fish/rainbow-trout.png">
-            <figcaption>Rainbow trout</figcaption>
-          </figure>
-        </aside>
+            <p class="description">
+              While the majority of anglers will float on pontoons, rafts or drift boats, there are numerous public-access points for bank anglers. Trout measuring up to 20 inches or more feed on grasshoppers and stoneflies that reside on the surface, and fly-anglers do well using gaudy imitations of those insects. This summer due to low water flows, anglers can also cast using dry-flies.
+            
+          </div>
 
-        <p class="description">
-          While the majority of anglers will float on pontoons, rafts or drift boats, there are numerous public-access points for bank anglers. Trout measuring up to 20 inches or more feed on grasshoppers and stoneflies that reside on the surface, and fly-anglers do well using gaudy imitations of those insects. This summer due to low water flows, anglers can also cast using dry-flies.
-
-        <!-- <aside class="sidebar"> -->
-          <%= t.include("_leaflet.html", { lat: 47.1890125, lng: -120.9574127 }) %>
-        <!-- </aside> -->
-
-        <ul class="fact-box">
-          <li> <b>Species:</b> Rainbow trout
-          <li> <b>Dates:</b> Year-round
-          <li> <b>Where:</b> The famed ripples of this blue-ribbon trout fly-fishery are within sight of drivers zipping up and down I-90. Locals refer to this section as the “Farmland Stretch” as it twists and turns from Thorp downstream to the Yakima River Canyon south of Ellensburg.
-        </ul>
+          <aside class="sidebar">
+            <figure class="fish">
+              <img src="./assets/fish/rainbow-trout.png">
+              <figcaption>Rainbow trout</figcaption>
+            </figure>
+          </aside>
+        
+        </div>
 
       </section>
       
@@ -166,6 +207,8 @@
 
         <p class="description">
           Thorp Fruit & Antique Mall in Thorp is a 60-year-old, third generation family-owned establishment off Exit 101 west of Ellensburg. They offer fresh fruit and vegetables with a wide variety of candies, ice cream and antiques.
+        
+        <%= t.include("_leaflet.html", { lat: 47.054008, lng: -120.66331 }) %>
 
       </section>
       
@@ -177,95 +220,132 @@
 
         <p class="description">
           Campus U-Tote-Em Burgers in Ellensburg is an iconic fast-food eatery serving up a wide variety of burgers, shakes and other treats. Established in 1947, it is located just across the street from Central Washington University.
+          
+        <%= t.include("_leaflet.html", { lat: 47.000557, lng: -120.53575799 }) %>
 
       </section>
 
       <section class="primary" id="columbia-river">
 
         <h2>COLUMBIA RIVER BELOW VANTAGE</h2>
+        
+        <div class="content">
 
-        <aside class="sidebar">
-          <figure class="fish">
-            <img src="./assets/fish/sockeye.png">
-            <figcaption>Sockeye salmon</figcaption>
-          </figure>
-        </aside>
+          <aside class="sidebar">
+            <figure class="fish">
+              <img src="./assets/fish/sockeye.png">
+              <figcaption>Sockeye salmon</figcaption>
+            </figure>
+          </aside>
 
-        <p class="tips">
-          The preseason forecast calls for a whopping 394,000 sockeye to return to the mouth of the Columbia. Many are bound for the Okanogan River system, and will pass the I-90 crossing at Vantage. A new boat launch is located on Huntzinger Road on the west side of the Columbia south of Vantage. Fishing peaked last year around July 10, but good fishing can be had through July. Troll very slowly using a short 12- to 15-inch leader with a double-hook rig attached to a small pink plastic squid "hootchie skirt" laced with a jarred shrimp bait and a Mack’s Lure Smile Blade. This is an excellent place for smallmouth bass that can be caught near the riprap along the interstate’s north side.
-
-        <aside class="sidebar">
-          <%= t.include("_leaflet.html", { lat: 47.3525597, lng: -121.3734193 }) %>
-        </aside>
-
-        <ul class="fact-box">
-          <li> <b>Species:</b> Sockeye salmon
-          <li> <b>Dates:</b> July
-          <li> <b>Where:</b> The best fishing area is below Wanapum Dam located about five miles downstream from I-90.
-        </ul>
+          <div class="column">
+            
+            <ul class="fact-box">
+              <li> <b>Species:</b> Sockeye salmon
+              <li> <b>Dates:</b> July
+              <li> <b>Where:</b> The best fishing area is below Wanapum Dam located about five miles downstream from I-90. 
+              
+                <%= t.include("_leaflet.html", { lat: 47.3525597, lng: -121.3734193 }) %>
+            </ul>
+          
+            <p class="tips">
+              The preseason forecast calls for a whopping 394,000 sockeye to return to the mouth of the Columbia. Many are bound for the Okanogan River system, and will pass the I-90 crossing at Vantage. A new boat launch is located on Huntzinger Road on the west side of the Columbia south of Vantage. Fishing peaked last year around July 10, but good fishing can be had through July. Troll very slowly using a short 12- to 15-inch leader with a double-hook rig attached to a small pink plastic squid "hootchie skirt" laced with a jarred shrimp bait and a Mack’s Lure Smile Blade. This is an excellent place for smallmouth bass that can be caught near the riprap along the interstate’s north side.
+            
+          </div>
+        </div>
 
       </section>
       
       <section class="sightseeing" id="gingko-forest">
+      
+        <div class="content">
 
-        <aside class="sidebar ad">
-          <%= t.include("partials/_ad.html", {type: "square"}) %>
-        </aside>
+          <aside class="sidebar ad">
+            <%= t.include("partials/_ad.html", {type: "square"}) %>
+          </aside>
+          
+          <div class="column">
 
-        <h3>Gingko Petrified Forest State Park near Vantage: </h3>
-
-        <img class="icon" src="./assets/icons/dinosaur.png">
-
-        <p class="description">
-          Gingko Petrified Forest State Park near Vantage is regarded as one of the most unusual fossil forests in the world with petrified wood from a variety of trees.  The fossil forest was discovered in the early 1930s during highway construction and is a registered national historic natural landmark preserve.
+            <h3>Gingko Petrified Forest State Park near Vantage: </h3>
+    
+            <img class="icon" src="./assets/icons/dinosaur.png">
+    
+            <p class="description">
+              Gingko Petrified Forest State Park near Vantage is regarded as one of the most unusual fossil forests in the world with petrified wood from a variety of trees.  The fossil forest was discovered in the early 1930s during highway construction and is a registered national historic natural landmark preserve.
+            
+            <%= t.include("_leaflet.html", { lat: 46.900828, lng: -119.992756 }) %>
+              
+          </div>
+          
+        </div>
 
       </section>
 
       <section class="primary" id="moses-lake">
 
         <h2>MOSES LAKE</h2>
+        
+        <div class="content">
+        
+          <div class="column">
+          
+            <ul class="fact-box">
+              <li> <b>Species:</b> Walleye, yellow perch, rainbow trout and bass
+              <li> <b>Dates:</b> Year-round
+              <li> <b>Where:</b> This giant lake measuring more than 6,727 acres is located in Grant County, and a section can be seen by drivers who cross the main waterway on I-90.
+              
+                <%= t.include("_leaflet.html", { lat: 47.1079901, lng: -119.3182182 }) %>
+            </ul>
 
-        <aside class="sidebar">
-          <figure class="fish">
-            <img src="./assets/fish/walleye.png">
-            <figcaption>Walleye</figcaption>
-          </figure>
-          <figure class="fish">
-            <img src="./assets/fish/smallmouth.png">
-            <figcaption>Smallmouth bass</figcaption>
-          </figure>
-        </aside>
-
-        <p class="tips">
-          The lake is known to produce some of the largest yellow perch in the state. State Fish and Wildlife fish surveys found a high abundance of walleye (some exceed 10 pounds) and smallmouth bass up to and larger than five pounds. Depending on the time of year, the lake can generate decent rainbow trout fishing.
-
-        <ul class="fact-box">
-          <li> <b>Species:</b> Walleye, yellow perch, rainbow trout and bass
-          <li> <b>Dates:</b> Year-round
-          <li> <b>Where:</b> This giant lake measuring more than 6,727 acres is located in Grant County, and a section can be seen by drivers who cross the main waterway on I-90.
-        </ul>
+            <p class="tips">
+              The lake is known to produce some of the largest yellow perch in the state. State Fish and Wildlife fish surveys found a high abundance of walleye (some exceed 10 pounds) and smallmouth bass up to and larger than five pounds. Depending on the time of year, the lake can generate decent rainbow trout fishing.
+        
+          </div>
+          
+          <aside class="sidebar">
+            <figure class="fish">
+              <img src="./assets/fish/walleye.png">
+              <figcaption>Walleye</figcaption>
+            </figure>
+            <figure class="fish">
+              <img src="./assets/fish/smallmouth.png">
+              <figcaption>Smallmouth bass</figcaption>
+            </figure>
+          </aside>
+          
+        </div>
 
       </section>
       
       <section class="primary" id="sprague-lake">
 
         <h2>SPRAGUE LAKE</h2>
+        
+        <div class="content">
 
-        <aside class="sidebar">
-          <figure class="fish">
-            <img src="./assets/fish/steelhead.png">
-            <figcaption>Steelhead</figcaption>
-          </figure>
-        </aside>
-
-        <p class="tips">
-          It is not uncommon to catch rainbow trout up to 22 inches. To spice it up, 369,000 juvenile hatchery steelhead were planted in the fall of 2014, and are now averaging 15 to 16 inches with many expected to grow even larger. Largemouth bass in the 2 to 5 pound range are often seen in catches. State fishery also planted channel catfish several times in recent years.
-
-        <ul class="fact-box">
-          <li> <b>Species:</b> Steelhead, rainbow trout, Lahontan cutthroat trout and largemouth bass
-          <li> <b>Dates:</b> Year-round
-          <li> <b>Where:</b> The lake is located two miles west of the city of Sprague, bordering the south side of I-90 off Exit 245.
-        </ul>
+          <aside class="sidebar">
+            <figure class="fish">
+              <img src="./assets/fish/steelhead.png">
+              <figcaption>Steelhead</figcaption>
+            </figure>
+          </aside>
+          
+          <div class="column">
+    
+            <ul class="fact-box">
+              <li> <b>Species:</b> Steelhead, rainbow trout, Lahontan cutthroat trout and largemouth bass
+              <li> <b>Dates:</b> Year-round
+              <li> <b>Where:</b> The lake is located two miles west of the city of Sprague, bordering the south side of I-90 off Exit 245.
+              
+                <%= t.include("_leaflet.html", { lat: 47.254235, lng: -118.0697367 }) %>
+            </ul>
+  
+            <p class="tips">
+              It is not uncommon to catch rainbow trout up to 22 inches. To spice it up, 369,000 juvenile hatchery steelhead were planted in the fall of 2014, and are now averaging 15 to 16 inches with many expected to grow even larger. Largemouth bass in the 2 to 5 pound range are often seen in catches. State fishery also planted channel catfish several times in recent years.
+            
+          </div>
+          
+        </div>
 
       </section>
       
@@ -275,63 +355,84 @@
 
         <p class="description">
           Fishtrap Lake is an "I-90 Gem" at the Fishtrap Exit east of Sprague. It is managed as a rainbow trout fishery and has a small resort and campground with boat rentals and boat ramp.
+          
+        <%= t.include("_leaflet.html", { lat: 47.35648, lng: -117.8244932 }) %>
 
       </section>
       
       <section class="sightseeing" id="john-wayne-trail">
 
-        <h3>John Wayne Pioneer Trail:</h3>
+        <h3>John Wayne Pioneer Trail</h3>
 
         <img class="icon" src="./assets/icons/john-wayne.png">
 
         <p class="description">
           John Wayne Pioneer Trail, located in Iron Horse State Park, offers stupendous natural scenery with camping, hiking, mountain biking and a 2.3-mile rail tunnel under Snoqualmie Pass (usually open from late spring to fall). Take Exit 32 off I-90.
+        
+        <%= t.include("_leaflet.html", { lat: 47.2313725, lng: -117.4622307 }) %>
+
+      </section>
+      
+      <section class="side-trip" id="spokane-river">
+
+        <h3>Spokane River</h3>
+
+        <p class="description">
+          Spokane River offers the chance to catch redband rainbow trout, and is mainly catch-and-release fly-fishing along I-90 near Liberty Lake. You can also catch smallmouth bass, but follow the single barbless hook rule.
+          
+        <%= t.include("_leaflet.html", { lat: 47.6797206, lng: -117.1348572 }) %>
+
+      </section>
+      
+      <section class="sightseeing" id="spokane-river-trail">
+
+        <h3>Spokane River Centennial Trail</h3>
+
+        <img class="icon left" src="./assets/icons/wagon.png">
+
+        <p class="description">
+          Spokane River Centennial Trail is a scenic 37-mile paved recreational trail that follows the Spokane River to Nine Mile Falls and continues to the Washington/Idaho state line.
+          
+        <%= t.include("_leaflet.html", { lat: 47.675248, lng: -117.4124669 }) %>
 
       </section>
       
       <section class="primary" id="liberty-lake">
 
         <h2>LIBERTY LAKE</h2>
+        
+        <div class="content">
 
-        <aside class="sidebar">
-          <figure class="fish">
-            <img src="./assets/fish/bluegill.png">
-            <figcaption>Bluegill sunfish</figcaption>
-          </figure>
-        </aside>
-
-        <p class="tips">
-          Rainbow trout up to 20 inches and brown trout hit the eight-pound mark. It is one of the few eastside lakes that has walleye up to 10 pounds, although not overly numerous. It is a popular largemouth (up to 6 pounds) and smallmouth (up to 3 pounds) bass fishery. Mix in bluegill sunfish, yellow perch and black crappie, and you’ve got a diverse bunch of fish to catch. There is a nice campground on the southeast corner operated by Spokane County Parks and a state Fish and Wildlife launch on the north end of the lake.
-
-        <ul class="fact-box">
-          <li> <b>Species:</b> Rainbow and brown trout
-          <li> <b>Dates:</b> Open now through Oct. 31
-          <li> <b>Where:</b> It is located in Spokane County just east of Spokane Valley and west of the Idaho-Washington state border. Take Exit 296 to reach this 706.1-acre lake.
-        </ul>
-
-      </section>
-      
-      <section class="side-trip" id="spokane-river">
-
-        <h3>Spokane River:</h3>
-
-        <p class="description">
-          Spokane River offers the chance to catch redband rainbow trout, and is mainly catch-and-release fly-fishing along I-90 near Liberty Lake. You can also catch smallmouth bass, but follow the single barbless hook rule.
-
-      </section>
-      
-      <section class="sightseeing" id="spokane-river-trail">
-
-        <h3>Spokane River Centennial Trail:</h3>
-
-        <img class="icon left" src="./assets/icons/wagon.png">
-
-        <p class="description">
-          Spokane River Centennial Trail is a scenic 37-mile paved recreational trail that follows the Spokane River to Nine Mile Falls and continues to the Washington/Idaho state line.
+          <aside class="sidebar">
+            <figure class="fish">
+              <img src="./assets/fish/bluegill.png">
+              <figcaption>Bluegill sunfish</figcaption>
+            </figure>
+          </aside>
+          
+          <div class="column">
+    
+            <ul class="fact-box">
+              <li> <b>Species:</b> Rainbow and brown trout
+              <li> <b>Dates:</b> Open now through Oct. 31
+              <li> <b>Where:</b> It is located in Spokane County just east of Spokane Valley and west of the Idaho-Washington state border. Take Exit 296 to reach this 706.1-acre lake.
+              
+              <%= t.include("_leaflet.html", { lat: 47.648506, lng: -117.0830154 }) %>
+            </ul>
+  
+            <p class="tips">
+              Rainbow trout up to 20 inches and brown trout hit the eight-pound mark. It is one of the few eastside lakes that has walleye up to 10 pounds, although not overly numerous. It is a popular largemouth (up to 6 pounds) and smallmouth (up to 3 pounds) bass fishery. Mix in bluegill sunfish, yellow perch and black crappie, and you’ve got a diverse bunch of fish to catch. There is a nice campground on the southeast corner operated by Spokane County Parks and a state Fish and Wildlife launch on the north end of the lake.
+            
+          </div>
+          
+        </div>
 
       </section>
 
-      <footer>
+      <footer class="credits">
+        <a class="logo" href="http://seattletimes.com">
+          <img src="./assets/seattletimes.svg">
+        </a>
         <ul>
           <li> Design by Frank Mina
           <li> Development by Thomas Wilburn
