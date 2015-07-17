@@ -9,17 +9,21 @@ body {
     transition: transform .5s ease-in-out;
     .transform(translateX(-50%) translateY(-100%));
     z-index: 999;
-    background: white;
-    background-image: linear-gradient(to bottom, white, #EEE);
-    height: 30px;
+    background: #EEE;
+    background-image: linear-gradient(to bottom, #F8F8F8, #EEE);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+    height: 50px;
     width: 100%;
-
+    .display-flex;
+    
+    .logo {
+      .flex(0 0 50px);
+      background: #CCC;
+    }
+    
     .route {
-      width: 960px;
-      max-width: 100%;
-      margin: auto;
-      height: 100px;
-      display: none;
+      .flex(1);
+      position: relative;
     }
 
     .car {
@@ -36,4 +40,27 @@ body {
       .transform(translateX(-50%) translateY(0));
     }
   }
+}
+
+.sticky-map .dot {
+  border-radius: 100%;
+  position: absolute;
+  top: 25%;
+  .transform(translateY(-50%));
+  
+  &.primary {
+    background: @fish-cyan;
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.side-trip {
+    background: @fish-orange;
+    height: 10px;
+    width: 10px;
+  }
+  
+  &.lake-washington { left: 5% }
+  &.lake-sammamish { left: 6% }
+  &.rattlesnake-lake { left: 10% }
 }

@@ -1,10 +1,10 @@
-require("./lib/social");
-require("./lib/ads");
-var track = require("./lib/tracking");
+// require("./lib/social");
+// require("./lib/ads");
+// var track = require("./lib/tracking");
 
-require("component-leaflet-map");
+// require("component-leaflet-map");
 
-var sections = document.querySelectorAll("section.primary[id]");
+var sections = document.querySelectorAll("section[id]");
 
 var onScroll = function() {
   for (var i = sections.length - 1; i >= 0; i--) {
