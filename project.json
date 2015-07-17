@@ -1,17 +1,17 @@
 {
   "s3": {
     "stage": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "tough-woodruff"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2015/fishing-trip"
     }
   },
-  "title": "",
-  "description": "",
-  "url": "",
+  "title": "Fishing I-90",
+  "description": "Here are some of the top summertime fishing activities on I-90, sure to hook you into plenty of fish.",
+  "url": "http://projects.seattletimes.com/2015/fishing-trip",
   "slug": "",
   "tags": [],
   "image": "http://seattletimes.com/art/ui/fb_icon_large.jpg",
