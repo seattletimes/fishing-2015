@@ -4,16 +4,20 @@ body {
   .sticky-map {
     position: fixed;
     top: 0;
-    left: 50%;
+    left: 0;
     transition: -webkit-transform .5s ease-in-out;
     transition: transform .5s ease-in-out;
-    .transform(translateX(-50%) translateY(-100%));
+    .transform(translateY(-100%));
     z-index: 999;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
     height: 44px;
     width: 100%;
     padding: 0;
     .display-flex;
+    
+    @media @mobile {
+      display: none;
+    }
     
     .logo {
       .flex(0 0 50px);
@@ -26,6 +30,16 @@ body {
       background: #EEE;
       background-image: linear-gradient(to bottom, #F8F8F8, #EEE);
       overflow: hidden;
+      
+      hr {
+        border: none;
+        border-top: 2px dashed #CCD;
+        position: absolute;
+        top: 20px;
+        left: 2.5%;
+        width: 95%;
+        margin: auto;
+      }
     }
 
     .car {
@@ -41,7 +55,7 @@ body {
 
   &:not([data-section="intro"]) {
     .sticky-map {
-      .transform(translateX(-50%) translateY(0));
+      .transform(translateY(0));
     }
   }
   
@@ -75,6 +89,7 @@ body {
   position: absolute;
   top: 20px;
   .transform(translateY(-50%));
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, .2);
   
   &.primary {
     background: @fish-cyan;

@@ -6,6 +6,10 @@ main.road-trip {
   margin: auto;
   .display-flex;
   .flex-wrap(wrap);
+  
+  @media @mobile {
+    display: block;
+  }
 }
 
 section {
@@ -27,14 +31,27 @@ section {
     .transform(rotate(-4deg));
     -webkit-transform-origin: bottom left;
     transform-origin: bottom left;
+    
+    @media @mobile {
+      font-size: 32px;
+      text-shadow: 2px 2px 0 @fish-red;
+    }
   }
 
   &#columbia-river h2 {
     font-size: 80px;
+    
+    @media @mobile {
+      font-size: 20px;
+    }
   }
   
   .content {
-    .display-flex; 
+    .display-flex;
+    
+    @media @mobile {
+      display: block;
+    }
   }
   
   
@@ -67,6 +84,10 @@ section {
       .transform(rotate(4deg));
       -webkit-transform-origin: top left;
       transform-origin: top left;
+      
+      @media @mobile {
+        font-size: 18px;
+      }
     }
 
     .tips, .fact-box {
@@ -90,6 +111,10 @@ section {
         font-family: @postcard;
         font-size: 48px;
         font-weight: normal;
+        
+        @media @mobile {
+          font-size: 18px;
+        }
       }
 
     }
@@ -107,11 +132,15 @@ section {
 
       &::before {
         font-size: 48px;
-        content: "Sidetrip";
+        content: "Sidetrip!";
         font-family: @cursive;
         color: @fish-cyan;
         display: block;
         margin-bottom: 10px;
+        
+        @media @mobile {
+          font-size: 18px;
+        }
       }
     }
   }
