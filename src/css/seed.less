@@ -36,11 +36,19 @@
 header.large-map {
   background: @fish-blue;
   background-image: linear-gradient(to bottom, @fish-blue, lighten(@fish-blue, 20%));
+  
+  .splash {
+    width: 100%;
+  }
 
   .byline {
     font-family: @postcard;
     display: block;
     // font-style: normal;
+    
+    @media @mobile {
+      font-size: 14px;
+    }
   }
 
   .content {
@@ -81,7 +89,7 @@ figure.fish {
     display: block;
     margin: auto;
     font-style: italic;
-    font-size: 13px;
+    font-size: 18px;
   }
 }
 
@@ -110,6 +118,7 @@ figure.fish {
   b {
     font-family: @postcard;
     font-weight: normal;
+    text-transform: uppercase;
   }
 }
 
@@ -178,10 +187,20 @@ footer.credits {
     font-family: @postcard;
     padding: 0;
     margin: 0;
+    
+    @media @mobile {
+      li {
+        font-size: 12px;
+      }
+    }
   }
   
   .logo {
     float: right;
     width: 120px;
+    
+    @media @mobile {
+      display: none;
+    }
   }
 }
