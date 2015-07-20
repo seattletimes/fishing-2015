@@ -151,4 +151,40 @@ section {
       }
     }
   }
+
+  &.read-more {
+    .display-flex();
+    border-top: 1px solid @df-light-gray;
+    border-bottom: 1px solid @df-light-gray;
+    .flex(0 0 100%);
+    padding: 0;
+    margin-top: 15px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      top: -15px;
+      color: @df-dark-gray;
+      content: "Don't miss:";
+      text-shadow: -2px -2px 1px white, 2px -2px 1px white, 2px 2px 1px white, -2px 2px 1px white;
+      text-align: center;
+      font-size: 20px;
+      font-family: @postcard;
+    }
+
+    a.recirc {
+      .flex(1 0 50%);
+      text-align: center;
+      display: block;
+      font-family: @df-serif;
+      font-size: 20px;
+      color: @df-dark-gray;
+      padding: 20px 0;
+
+      &:first-child {
+        border-right: 1px solid @df-light-gray;
+      }
+    }
+  }
 }
