@@ -39,6 +39,7 @@
         <div class="side-trip dot lake-sammamish"></div>
         <div class="side-trip dot rattlesnake-lake"></div>
         <div class="sightseeing dot twedes"></div>
+        <div class="sightseeing dot john-wayne-trail"></div>
         <div class="primary dot lake-keechelus"></div>
         <div class="primary dot yakima-river"></div>
         <div class="sightseeing dot thorp-fruit"></div>
@@ -48,7 +49,6 @@
         <div class="primary dot moses-lake"></div>
         <div class="primary dot sprague-lake"></div>
         <div class="side-trip dot fishtrap-lake"></div>
-        <div class="sightseeing dot john-wayne-trail"></div>
         <div class="primary dot liberty-lake"></div>
         <div class="side-trip dot spokane-river"></div>
         <div class="sightseeing dot spokane-river-trail"></div>
@@ -130,11 +130,20 @@
               
           </div>
           
-          <aside class="sidebar ad">
-            <%= t.include("partials/_ad.html", {type: "square"}) %>
-          </aside>
-          
         </div>
+
+      </section>
+      
+      <section class="sightseeing" id="john-wayne-trail">
+
+        <h3>John Wayne Pioneer Trail</h3>
+
+        <img class="icon" src="./assets/icons/john-wayne.png">
+
+        <p class="description">
+          John Wayne Pioneer Trail, located in Iron Horse State Park, offers stupendous natural scenery with camping, hiking, mountain biking and a 2.3-mile rail tunnel under Snoqualmie Pass (usually open from late spring to fall). Take Exit 32 off I-90.
+        
+        <%= t.include("_leaflet.html", { lat: 47.3971689, lng: -121.3953845 }) %>
 
       </section>
 
@@ -365,19 +374,6 @@
 
       </section>
       
-      <section class="sightseeing" id="john-wayne-trail">
-
-        <h3>John Wayne Pioneer Trail</h3>
-
-        <img class="icon" src="./assets/icons/john-wayne.png">
-
-        <p class="description">
-          John Wayne Pioneer Trail, located in Iron Horse State Park, offers stupendous natural scenery with camping, hiking, mountain biking and a 2.3-mile rail tunnel under Snoqualmie Pass (usually open from late spring to fall). Take Exit 32 off I-90.
-        
-        <%= t.include("_leaflet.html", { lat: 47.2313725, lng: -117.4622307 }) %>
-
-      </section>
-      
       <section class="side-trip" id="spokane-river">
 
         <h3>Spokane River</h3>
@@ -390,15 +386,27 @@
       </section>
       
       <section class="sightseeing" id="spokane-river-trail">
+      
+        <div class="content">
+        
+          <div class="column">
 
-        <h3>Spokane River Centennial Trail</h3>
-
-        <img class="icon left" src="./assets/icons/wagon.png">
-
-        <p class="description">
-          Spokane River Centennial Trail is a scenic 37-mile paved recreational trail that follows the Spokane River to Nine Mile Falls and continues to the Washington/Idaho state line.
+            <h3>Spokane River Centennial Trail</h3>
+    
+            <img class="icon left" src="./assets/icons/wagon.png">
+    
+            <p class="description">
+              Spokane River Centennial Trail is a scenic 37-mile paved recreational trail that follows the Spokane River to Nine Mile Falls and continues to the Washington/Idaho state line.
+              
+            <%= t.include("_leaflet.html", { lat: 47.675248, lng: -117.4124669 }) %>
+        
+          </div>
           
-        <%= t.include("_leaflet.html", { lat: 47.675248, lng: -117.4124669 }) %>
+          <aside class="sidebar ad">
+            <%= t.include("partials/_ad.html", {type: "square"}) %>
+          </aside>
+          
+        </div>
 
       </section>
       
